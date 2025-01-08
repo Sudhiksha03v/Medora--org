@@ -1,3 +1,5 @@
+// lib/appwrite.config.ts
+
 import * as sdk from "node-appwrite";
 
 export const {
