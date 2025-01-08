@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+ 
+  /* transition: background-color 0.2s ease-in-out; */
+  color-scheme: dark light;
+}
+
 /* ========================================== TAILWIND STYLES */
 @layer base {
   /* Remove scrollbar */
