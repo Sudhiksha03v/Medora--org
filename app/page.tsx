@@ -11,7 +11,7 @@ const Home = () => {
   const isAdmin = searchParams.get("admin") === "true";
 
   return (
-    <div className="flex h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="gradient-to-b from-gray-900 to-gray-800">
       {isAdmin && <PasskeyModal />}
 
       {/* Left Section: Image */}
