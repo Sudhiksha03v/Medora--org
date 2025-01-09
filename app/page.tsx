@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -11,7 +11,7 @@ const Home = () => {
   const isAdmin = searchParams.get("admin") === "true";
 
   return (
-    <div className="gradient-to-b from-gray-900 to-gray-800">
+    <div className="flex min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       {isAdmin && <PasskeyModal />}
 
       {/* Left Section: Image */}
@@ -28,7 +28,7 @@ const Home = () => {
       </div>
 
       {/* Right Section: Content & Form */}
-      <section className="flex flex-col justify-center items-center w-full md:w-1/2 px-8 py-16 space-y-8">
+      <section className="flex flex-col justify-start items-center w-full md:w-1/2 px-8 py-16 space-y-8">
         <div className="text-center space-y-4 w-full">
           <div className="w-full flex justify-center">
             <Image
@@ -45,7 +45,7 @@ const Home = () => {
         </div>
 
         {/* Patient Registration Form */}
-        <div className="w-full max-w-lg bg-gray-800 p-10 rounded-lg shadow-2xl mt-10 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        <div className="w-full max-w-lg bg-gray-800 p-10 rounded-lg shadow-2xl mt-10 transition-all duration-300">
           <PatientForm />
         </div>
 
