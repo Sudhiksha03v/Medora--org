@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
- 
   /* transition: background-color 0.2s ease-in-out; */
   color-scheme: dark light;
 }
@@ -17,6 +15,8 @@ html {
     height: 0px;
     border-radius: 0px;
   }
+
+  
 
   .remove-scrollbar::-webkit-scrollbar-track {
     background: transparent;
@@ -31,6 +31,10 @@ html {
     /* background: #1e2238; */
     background: transparent;
   }
+}
+th {
+  background-color: #1a202c; /* Dark gray background */
+  color: #e2e8f0; /* Light gray text */
 }
 
 @layer utilities {

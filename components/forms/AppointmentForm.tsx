@@ -135,9 +135,9 @@ export const AppointmentForm = ({
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
         {type === "create" && (
           <section className="mb-12 space-y-4">
-            <h1 className="header">New Appointment</h1>
+            <h1 className="header">Confirm your new appointment</h1>
             <p className="text-dark-700">
-              Request a new appointment in 10 seconds.
+            Confirm your new appointment in just 30 seconds and get one step closer to a better health!
             </p>
           </section>
         )}
@@ -148,8 +148,8 @@ export const AppointmentForm = ({
               fieldType={FormFieldType.SELECT}
               control={form.control}
               name="primaryPhysician"
-              label="Doctor"
-              placeholder="Select a doctor"
+              label="Confirm you Doctor"
+              placeholder="Select a doctor from the list to confirm"
             >
               {Doctors.map((doctor, i) => (
                 <SelectItem key={doctor.name + i} value={doctor.name}>
@@ -183,7 +183,7 @@ export const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="reason"
-                label="Appointment reason"
+                label="Mention reason for appointment"
                 placeholder="Annual montly check-up"
                 disabled={type === "schedule"}
               />
@@ -192,7 +192,7 @@ export const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="note"
-                label="Comments/notes"
+                label="Additional Comments/notes if any"
                 placeholder="Prefer afternoon appointments, if possible"
                 disabled={type === "schedule"}
               />

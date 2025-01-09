@@ -42,41 +42,86 @@ export const IdentificationTypes = [
 
 export const Doctors = [
   {
-    image: "/assets/images/dr-green.png",
-    name: "John Green",
+    image: "/assets/images/dr-rohini.png",
+    name: "Dr. Rohini Sharma – Consultant Dermatologist, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-richard.png",
+    name: "Dr. Richard Daniel – Senior Cardiologist, MD, DM",
+  },
+  {
+    image: "/assets/images/dr-neha.png",
+    name: "Dr. Neha Singhania – Obstetrician and Gynecologist, MBBS, MS",
+  },
+  {
+    image: "/assets/images/dr-roshni.png",
+    name: "Dr. Roshni Aravind Pillai – Pediatric Surgeon, MBBS, MS, MCh",
+  },
+  {
+    image: "/assets/images/dr-niveditha.png",
+    name: "Dr. Niveditha Srinivasan – Neurologist, MD, DM",
+  },
+  {
+    image: "/assets/images/dr-nandini.png",
+    name: "Dr. Nandini Ramaswamy – Endocrinologist, MBBS, MD, DM",
   },
   {
     image: "/assets/images/dr-cameron.png",
-    name: "Leila Cameron",
+    name: "Dr. Leila Cameron – Orthopedic Specialist, MBBS, MS",
   },
   {
     image: "/assets/images/dr-livingston.png",
-    name: "David Livingston",
+    name: "Dr. David Ryan Livingston – Gastroenterologist, MD, DM",
   },
   {
     image: "/assets/images/dr-peter.png",
-    name: "Evan Peter",
+    name: "Dr. Peter Robberts Evan – Clinical Psychologist, PhD",
   },
   {
-    image: "/assets/images/dr-powell.png",
-    name: "Jane Powell",
+    image: "/assets/images/dr-maya.png",
+    name: "Dr. Maya Devanshi Parekh – Oncologist, MBBS, MD, DM",
   },
   {
-    image: "/assets/images/dr-remirez.png",
-    name: "Alex Ramirez",
+    image: "/assets/images/dr-sandra.png",
+    name: "Dr. Sandra Alyssa Cruz – Ophthalmologist, MBBS, MS" ,
   },
   {
-    image: "/assets/images/dr-lee.png",
-    name: "Jasmine Lee",
+    image: "/assets/images/dr-harsha.png",
+    name: "Dr. Harsha Venkatesh – Pulmonologist, MBBS, MD",
   },
   {
-    image: "/assets/images/dr-cruz.png",
-    name: "Alyana Cruz",
+    image: "/assets/images/dr-varun.png",
+    name: "Dr. Varun Ghosh – Psychiatrist, MBBS, MD",
   },
   {
-    image: "/assets/images/dr-sharma.png",
-    name: "Hardik Sharma",
+    image: "/assets/images/dr-jagannath.png",
+    name: "Dr. Jagannath Mishra – Urologist, MBBS, MS, MCh",
   },
+
+  {
+    image: "/assets/images/dr-lakshmi.png",
+    name: "Dr. Lakshmi Narayanan – Nephrologist, MD, DM",
+  },
+  {
+    image: "/assets/images/dr-leela.png",
+    name: "Dr. Leela Raghavan – Rheumatologist, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-rishabh.png",
+    name: "Dr. Rishabh Kulkarni – Radiologist, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-savitri.png",
+    name: "Dr. Savitri Joshi Parekh – General Physician, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-shankar.png",
+    name: "Dr. Shankar Raghunandan Iyer – ENT Specialist, MBBS, MS",
+  },
+  {
+    image: "/assets/images/dr-vivek.png",
+    name: "Dr. Vivek Mittal – Pediatrician, MBBS, MD",
+  }, 
 ];
 
 export const StatusIcon = {

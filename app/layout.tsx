@@ -1,5 +1,3 @@
-// layout.tsx
-
 "use client";
 
 import type { Metadata } from "next";
@@ -18,7 +16,7 @@ const sans = Plus_Jakarta_Sans({
 
 const metadata: Metadata = {
   title: "Medora | New Gen Healthcare",
-  description: "The ultimate healthcare management system",
+  description:  "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
 };
 
 export default function RootLayout({
@@ -33,6 +31,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title?.toString() || "Default Title"}</title>
+      </head>
       <body  
       className={cn(
           "min-h-screen font-sans antialiased",

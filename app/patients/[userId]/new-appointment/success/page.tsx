@@ -19,67 +19,93 @@ const RequestSuccess = async ({
   );
   const user = await getUser(userId);
 
- Sentry.metrics.set("user_view_appointment-success", user.name );
-
-
+  Sentry.metrics.set("user_view_appointment-success", user.name);
 
   return (
-    <div className=" flex h-screen max-h-screen px-[5%]">
-      <div className="success-img">
-        <Link href="/">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
-            alt="logo"
-            className="h-10 w-fit"
-          />
-        </Link>
-
-        <section className="flex flex-col items-center">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 p-6">
+      {/* Main Content */}
+      <div className="w-full max-w-5xl bg-gray-800 p-8 rounded-xl shadow-2xl flex-1 space-y-8">
+        {/* Success GIF on Top */}
+        <div className="flex justify-center">
           <Image
             src="/assets/gifs/success.gif"
-            height={300}
-            width={280}
+            height={200}
+            width={200}
             alt="success"
+            className="rounded-full border-4 border-green-200 shadow-lg"
           />
-          <h2 className="header mb-6 max-w-[600px] text-center">
-            Your <span className="text-green-500">appointment request</span> has
-            been successfully submitted!
-          </h2>
-          <p>We&apos;ll be in touch as soon as we confirm the appointment and get back to you!</p>
-        </section>
+        </div>
 
-        <section className="request-details">
-          <p>Requested appointment details: </p>
-          <div className="flex items-center gap-3">
+        {/* Header Section */}
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-green-500">
+            Appointment Request Successful!
+          </h1>
+          <p className="mt-4 text-lg text-gray-400">
+            Your appointment request has been submitted successfully. We’ll
+            confirm your appointment and get back to you shortly!
+          </p>
+        </div>
+
+        {/* Appointment Details Section */}
+        <div className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold text-gray-200">Appointment Details</h2>
+          <div className="flex items-center gap-6">
             <Image
               src={doctor?.image!}
               alt="doctor"
-              width={100}
-              height={100}
-              className="size-6"
+              width={80}
+              height={80}
+              className="h-12 w-12 rounded-full"
             />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+            <div>
+              <p className="text-lg font-medium text-gray-300">
+                Dr. {doctor?.name}
+              </p>
+              <p className="text-sm text-gray-400">Primary Physician</p>
+            </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-4">
             <Image
               src="/assets/icons/calendar.svg"
               height={24}
               width={24}
               alt="calendar"
+              className="h-6 w-6"
             />
-            <p> {formatDateTime(appointment.schedule).dateTime}</p>
+            <p className="text-lg text-gray-300">
+              {formatDateTime(appointment.schedule).dateTime}
+            </p>
           </div>
-        </section>
+        </div>
 
-        <Button variant="outline" className="shad-primary-btn" asChild>
-          <Link href={`/patients/${userId}/new-appointment`}>
-            New Appointment
-          </Link>
-        </Button>
+        {/* Next Steps Section */}
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-semibold text-blue-400">Next Steps</h2>
+          <ul className="list-disc space-y-2 pl-6 text-gray-400">
+            <li>We’ll review your request and confirm your appointment.</li>
+            <li>You’ll receive a confirmation email or SMS.</li>
+            <li>Prepare any necessary documents for your visit.</li>
+          </ul>
+        </div>
 
-        <p className="copyright">Medora | All Rights Reserved© </p>
+        {/* Buttons Section */}
+        <div className="mt-8 flex justify-center gap-6">
+          <Button
+            className="bg-green-500 px-8 py-3 text-lg font-semibold text-white shadow-lg rounded-md transition duration-300 hover:bg-green-600"
+            asChild
+          >
+            <Link href={`/patients/${userId}/new-appointment`}>
+              Go Back to Previous Page
+            </Link>
+          </Button>
+          <Button
+            className="bg-green-500 px-8 py-3 text-lg font-semibold text-white shadow-lg rounded-md transition duration-300 hover:bg-green-600"
+            asChild
+          >
+            <Link href="/">Request a Fresh Appointment</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
