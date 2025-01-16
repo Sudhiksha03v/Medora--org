@@ -1,7 +1,5 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
+A healthcare app streamlining appointments with Next.js for the front-end, Appwrite for the back-end, TypeScript for reliability, TailwindCSS/ShadCN for sleek UI, and Twilio for SMS alerts.
 ## Getting Started
-
 First, run the development server:
 
 ```bash
