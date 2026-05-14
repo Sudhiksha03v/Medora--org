@@ -8,7 +8,7 @@ export const UserFormValidation = z.object({
   email: z.string().email("Invalid email address"),
   phone: z
     .string()
-    .refine((phone) => /^\+\d{10,15}$/.test(phone), "Invalid phone number"),
+    .refine((phone) => /^\+?[0-9\s\-()]{10,20}$/.test(phone), "Invalid phone number"),
 });
 
 export const PatientFormValidation = z.object({
@@ -19,7 +19,7 @@ export const PatientFormValidation = z.object({
   email: z.string().email("Invalid email address"),
   phone: z
     .string()
-    .refine((phone) => /^\+\d{10,15}$/.test(phone), "Invalid phone number"),
+    .refine((phone) => /^\+?[0-9\s\-()]{10,20}$/.test(phone), "Invalid phone number"),
   birthDate: z.coerce.date(),
   gender: z.enum(["male", "female", "other"]),
   address: z

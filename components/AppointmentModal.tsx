@@ -37,7 +37,11 @@ export const AppointmentModal = ({
       <DialogTrigger asChild>
         <Button
           variant="ghost"
-          className={`capitalize ${type === "schedule" && "text-green-500"}`}
+          className={`capitalize font-semibold rounded-lg px-4 transition-all duration-200 ${
+            type === "schedule" 
+              ? "text-green-500 bg-green-500/10 hover:bg-green-500/20" 
+              : "text-red-500 hover:text-red-500 hover:bg-red-500/10"
+          }`}
         >
           {type}
         </Button>

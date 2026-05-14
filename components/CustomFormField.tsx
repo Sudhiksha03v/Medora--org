@@ -58,6 +58,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
               width={24}
               alt={props.iconAlt || "icon"}
               className="ml-2"
+              style={{ height: 'auto' }}
             />
           )}
           <FormControl>
@@ -135,6 +136,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
             width={24}
             alt="user"
             className="ml-2"
+            style={{ height: 'auto' }}
           />
           <FormControl>
             <ReactDatePicker

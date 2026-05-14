@@ -15,6 +15,10 @@ export const {
 
 const client = new sdk.Client();
 
+if (!ENDPOINT || !PROJECT_ID || !API_KEY) {
+  console.error("❌ MISSING APPWRITE ENV VARIABLES:", { ENDPOINT, PROJECT_ID, API_KEY: API_KEY ? "EXISTS" : "MISSING" });
+}
+
 client.setEndpoint(ENDPOINT!).setProject(PROJECT_ID!).setKey(API_KEY!);
 
 export const databases = new sdk.Databases(client);

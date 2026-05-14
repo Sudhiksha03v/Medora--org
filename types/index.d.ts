@@ -15,6 +15,7 @@ declare type SearchParamProps = {
   }
   declare interface User extends CreateUserParams {
     $id: string;
+    
   }
   
   declare interface RegisterUserParams extends CreateUserParams {

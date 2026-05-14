@@ -1,4 +1,4 @@
-"use client";
+// components/forms/PatientForm.tsx
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -29,6 +29,7 @@ export const PatientForm = () => {
 
   const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true);
+    console.log("Submitting form with values:", values);
 
     try {
       const user = {
@@ -38,23 +39,33 @@ export const PatientForm = () => {
       };
 
       const newUser = await createUser(user);
+      console.log("Create user response:", newUser);
 
       if (newUser) {
-        router.push(`/patients/${newUser.$id}/register`);
+        router.push(`/patients/${newUser.$id}/new-appointment`);
+      } else {
+        console.error("Failed to create user - no response returned.");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Form submission error:", error);
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
+
+  // Log validation errors if any
+  if (Object.keys(form.formState.errors).length > 0) {
+    console.log("Validation errors:", form.formState.errors);
+  }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
-        <section className="mb-12 space-y-4">
-          <h1 className="header">Hi there 👋</h1>
-          <p className="text-dark-700">Get started with appointments.</p>
+        <section className="mb-8 space-y-2">
+          <h1 className="font-display text-[32px] font-bold text-white">Hey there 👋</h1>
+          <p className="text-[14px] text-dark-700">
+            Get started by creating your account to book your first appointment.
+          </p>
         </section>
 
         <CustomFormField
@@ -62,7 +73,7 @@ export const PatientForm = () => {
           control={form.control}
           name="name"
           label="Full name"
-          placeholder="John Doe"
+          placeholder="Enter your full name"
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
@@ -72,7 +83,7 @@ export const PatientForm = () => {
           control={form.control}
           name="email"
           label="Email"
-          placeholder="johndoe@gmail.com"
+          placeholder="Example: youremail@gmail.com"
           iconSrc="/assets/icons/email.svg"
           iconAlt="email"
         />
@@ -85,7 +96,7 @@ export const PatientForm = () => {
           placeholder="(555) 123-4567"
         />
 
-        <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+        <SubmitButton isLoading={isLoading}>Yes, I confirm to proceed to the next step</SubmitButton>
       </form>
     </Form>
   );

@@ -52,14 +52,14 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="data-table">
+    <div className="data-table overflow-hidden rounded-2xl border border-dark-500/60 bg-dark-400/50 backdrop-blur-sm relative z-10">
       <Table className="shad-table">
-        <TableHeader className=" bg-dark-200">
+        <TableHeader className="bg-dark-500/40">
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="shad-table-row-header">
+            <TableRow key={headerGroup.id} className="shad-table-row-header border-b border-dark-500/50">
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className="text-dark-700 font-semibold py-4">
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -78,10 +78,10 @@ export function DataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
-                className="shad-table-row"
+                className="shad-table-row border-b border-dark-500/30 hover:bg-dark-500/10 transition-colors"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className="py-4">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
@@ -89,26 +89,27 @@ export function DataTable<TData, TValue>({
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+              <TableCell colSpan={columns.length} className="h-24 text-center text-dark-600">
                 No results.
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
-      <div className="table-actions">
+      <div className="table-actions p-4 flex items-center justify-end gap-3 border-t border-dark-500/30">
         <Button
           variant="outline"
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="shad-gray-btn"
+          className="shad-gray-btn h-9 w-9 p-0"
         >
           <Image
             src="/assets/icons/arrow.svg"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             alt="arrow"
+            style={{ height: 'auto' }}
           />
         </Button>
         <Button
@@ -116,14 +117,15 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="shad-gray-btn"
+          className="shad-gray-btn h-9 w-9 p-0"
         >
           <Image
             src="/assets/icons/arrow.svg"
-            width={24}
-            height={24}
-            alt="arrow "
+            width={20}
+            height={20}
+            alt="arrow"
             className="rotate-180"
+            style={{ height: 'auto' }}
           />
         </Button>
       </div>

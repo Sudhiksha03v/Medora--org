@@ -17,6 +17,7 @@ import { parseStringify } from "../utils";
 
 // CREATE APPWRITE USER
 export const createUser = async (user: CreateUserParams) => {
+  console.log("🚀 SERVER: Creating user in Appwrite...", user.email);
   try {
     // Create new user -> https://appwrite.io/docs/references/1.5.x/server-nodejs/users#create
     const newuser = await users.create(
@@ -31,13 +32,15 @@ export const createUser = async (user: CreateUserParams) => {
   } catch (error: any) {
     // Check existing user
     if (error && error?.code === 409) {
+      console.log("ℹ️ SERVER: User already exists, fetching existing...");
       const existingUser = await users.list([
         Query.equal("email", [user.email]),
       ]);
 
-      return existingUser.users[0];
+      return parseStringify(existingUser.users[0]);
     }
-    console.error("An error occurred while creating a new user:", error);
+    console.error("❌ SERVER ERROR in createUser:", error.message || error);
+    throw error; // Rethrow so the client catches the specific error
   }
 };
 

@@ -33,16 +33,11 @@ export const PasskeyModal = () => {
       : null;
 
   useEffect(() => {
-    const accessKey = encryptedKey && decryptKey(encryptedKey);
-
-    if (path)
-      if (accessKey === process.env.NEXT_PUBLIC_ADMIN_PASSKEY!.toString()) {
-        setOpen(false);
-        router.push("/admin");
-      } else {
-        setOpen(true);
-      }
-  }, [encryptedKey]);
+    // Show modal if we are on the admin-access path
+    if (path === "/admin-access") {
+      setOpen(true);
+    }
+  }, [path]);
 
   const closeModal = () => {
     setOpen(false);
@@ -58,8 +53,8 @@ export const PasskeyModal = () => {
       const encryptedKey = encryptKey(passkey);
 
       localStorage.setItem("accessKey", encryptedKey);
-
       setOpen(false);
+      router.push("/admin");
     } else {
       setError("Invalid passkey. Please try again.");
     }
@@ -78,6 +73,7 @@ export const PasskeyModal = () => {
               height={20}
               onClick={() => closeModal()}
               className="cursor-pointer"
+              style={{ height: 'auto' }}
             />
           </AlertDialogTitle>
           <AlertDialogDescription>

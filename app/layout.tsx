@@ -1,24 +1,29 @@
-// layout.tsx
-
-"use client";
-
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Plus_Jakarta_Sans as FontSans, Space_Grotesk as FontDisplay } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
-import { cn } from '@/lib/utils'
-import { ThemeProvider } from "@/components/theme-provider";
-import { useEffect } from 'react';
+import { cn } from "@/lib/utils";
 
-const sans = Plus_Jakarta_Sans({
-  weight: ["400", "500", "600", "700"], 
+const fontSans = FontSans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
 });
 
-const metadata: Metadata = {
+const fontDisplay = FontDisplay({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+export const metadata: Metadata = {
   title: "Medora | New Gen Healthcare",
-  description: "The ultimate healthcare management system",
+  description:
+    "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
+  icons: {
+    icon: "/assets/icons/logo-icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -26,22 +31,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    document.body.classList.add('dark');
-    document.body.style.colorScheme = 'dark';
-  }, []);
-
   return (
-    <html lang="en">
-      <body  
-      className={cn(
-          "min-h-screen font-sans antialiased",
-          sans.variable
-        )}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-dark-300 font-sans antialiased",
+          fontSans.variable,
+          fontDisplay.variable
+        )}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>
     </html>
   );
-};
+}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
@@ -10,30 +11,47 @@ const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-col space-y-14">
-      <header className="admin-header">
-        <Link href="/" className="cursor-pointer">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={32}
-            width={162}
-            alt="logo"
-            className="h-8 w-fit"
-          />
-        </Link>
+    <div className="mx-auto flex max-w-7xl flex-col space-y-14 relative min-h-screen">
+      {/* Background elements for consistency */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          opacity: 0.02,
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -left-32 size-[600px] rounded-full bg-green-500/5 blur-3xl"
+      />
 
-        <p className="text-16-semibold">Admin Dashboard</p>
-      </header>
-
-      <main className="admin-main">
-        <section className="w-full space-y-4">
-          <h1 className="header">Welcome 👋</h1>
-          <p className="text-dark-700">
+      <main className="admin-main py-12">
+        <section className="w-full space-y-4 relative z-10 mb-10">
+          <div className="flex items-center justify-between">
+            <h1 className="header text-[32px] md:text-[40px]">Welcome Admin,</h1>
+            <Button variant="outline" className="shad-gray-btn h-11 px-6 gap-2 rounded-xl" asChild>
+              <Link href="/">
+                <Image 
+                  src="/assets/icons/arrow.svg"
+                  height={20}
+                  width={20}
+                  alt="back"
+                  className="rotate-0"
+                  style={{ height: 'auto' }}
+                />
+                Go Back
+              </Link>
+            </Button>
+          </div>
+          <p className="text-dark-700 text-[16px]">
             Start the day with managing new appointments
           </p>
         </section>
 
-        <section className="admin-stat">
+        <section className="admin-stat relative z-10">
           <StatCard
             type="appointments"
             count={appointments.scheduledCount}

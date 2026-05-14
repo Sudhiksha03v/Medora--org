@@ -44,38 +44,67 @@ export const Doctors = [
   {
     image: "/assets/images/dr-green.png",
     name: "John Green",
+    specialty: "General Practitioner",
   },
   {
     image: "/assets/images/dr-cameron.png",
     name: "Leila Cameron",
+    specialty: "Cardiologist",
   },
   {
     image: "/assets/images/dr-livingston.png",
     name: "David Livingston",
+    specialty: "Orthopedic Surgeon",
   },
   {
     image: "/assets/images/dr-peter.png",
     name: "Evan Peter",
+    specialty: "Neurologist",
   },
   {
     image: "/assets/images/dr-powell.png",
     name: "Jane Powell",
+    specialty: "Pediatrician",
   },
   {
     image: "/assets/images/dr-remirez.png",
     name: "Alex Ramirez",
+    specialty: "Radiologist",
   },
   {
     image: "/assets/images/dr-lee.png",
     name: "Jasmine Lee",
+    specialty: "Dermatologist",
   },
   {
     image: "/assets/images/dr-cruz.png",
     name: "Alyana Cruz",
+    specialty: "OB-GYN",
   },
   {
     image: "/assets/images/dr-sharma.png",
     name: "Hardik Sharma",
+    specialty: "Endocrinologist",
+  },
+  {
+    image: "/assets/images/dr-peter.png",
+    name: "Richard Daniel",
+    specialty: "Senior Cardiologist, MD, DM",
+  },
+  {
+    image: "/assets/images/dr-cruz.png",
+    name: "Neha Singhania",
+    specialty: "Obstetrician and Gynecologist, MBBS, MS",
+  },
+  {
+    image: "/assets/images/dr-powell.png",
+    name: "Roshni Aravind Pillai",
+    specialty: "Pediatric Surgeon, MBBS, MS, MCh",
+  },
+  {
+    image: "/assets/images/dr-remirez.png",
+    name: "Lakshmi Narayanan",
+    specialty: "Nephrologist, MD, DM",
   },
 ];
 

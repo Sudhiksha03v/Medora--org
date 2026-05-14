@@ -44,7 +44,9 @@ export const AppointmentForm = ({
   const form = useForm<z.infer<typeof AppointmentFormValidation>>({
     resolver: zodResolver(AppointmentFormValidation),
     defaultValues: {
-      primaryPhysician: appointment ? appointment?.primaryPhysician : "",
+      primaryPhysician: appointment && Doctors.some((doc) => doc.name === appointment.primaryPhysician) 
+        ? appointment.primaryPhysician 
+        : "",
       schedule: appointment
         ? new Date(appointment?.schedule!)
         : new Date(Date.now()),
@@ -134,9 +136,11 @@ export const AppointmentForm = ({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
         {type === "create" && (
-          <section className="mb-12 space-y-4">
-            <h1 className="header">New Appointment</h1>
-            <p className="text-dark-700">
+          <section className="mb-12 space-y-2">
+            <h1 className="font-display text-[32px] md:text-[40px] font-bold leading-tight text-white">
+              New Appointment
+            </h1>
+            <p className="text-[16px] text-dark-600">
               Request a new appointment in 10 seconds.
             </p>
           </section>
@@ -155,11 +159,12 @@ export const AppointmentForm = ({
                 <SelectItem key={doctor.name + i} value={doctor.name}>
                   <div className="flex cursor-pointer items-center gap-2">
                     <Image
-                      src={doctor.image}
+                      src={doctor.image || "/assets/icons/user.svg"}
                       width={32}
                       height={32}
                       alt="doctor"
                       className="rounded-full border border-dark-500"
+                      style={{ height: 'auto' }}
                     />
                     <p>{doctor.name}</p>
                   </div>
