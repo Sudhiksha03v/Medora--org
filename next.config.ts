@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     cpus: 1,
     parallelServerBuildTraces: false,
   },
+  turbopack: {},
 } as any;
 
 export default withSentryConfig(nextConfig, {
