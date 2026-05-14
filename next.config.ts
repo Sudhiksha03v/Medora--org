@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     workerThreads: false,
     cpus: 1,
   },
-};
+} as any;
 
 export default withSentryConfig(nextConfig, {
   // For all available options, see:
