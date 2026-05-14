@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Doctors } from "@/constants";
+import { PatientForm } from "@/components/forms/PatientForm";
 
 // ─── Feature data ──────────────────────────────────────────────────────────
 const FEATURES = [

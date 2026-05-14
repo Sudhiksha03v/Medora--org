@@ -76,7 +76,9 @@ const AdminPage = async () => {
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>
-      </div>
+
+        <DataTable columns={columns} data={appointments.documents} />
+      </main>
     </div>
   );
 };
