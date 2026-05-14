@@ -106,6 +106,31 @@ export const Doctors = [
     name: "Lakshmi Narayanan",
     specialty: "Nephrologist, MD, DM",
   },
+
+  {
+    image: "/assets/images/dr-lakshmi.png",
+    name: "Dr. Lakshmi Narayanan – Nephrologist, MD, DM",
+  },
+  {
+    image: "/assets/images/dr-leela.png",
+    name: "Dr. Leela Raghavan – Rheumatologist, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-rishabh.png",
+    name: "Dr. Rishabh Kulkarni – Radiologist, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-savitri.png",
+    name: "Dr. Savitri Joshi Parekh – General Physician, MBBS, MD",
+  },
+  {
+    image: "/assets/images/dr-shankar.png",
+    name: "Dr. Shankar Raghunandan Iyer – ENT Specialist, MBBS, MS",
+  },
+  {
+    image: "/assets/images/dr-vivek.png",
+    name: "Dr. Vivek Mittal – Pediatrician, MBBS, MD",
+  }, 
 ];
 
 export const StatusIcon = {

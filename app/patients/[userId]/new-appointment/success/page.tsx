@@ -21,9 +21,7 @@ const RequestSuccess = async (props: {
   );
   const user = await getUser(userId);
 
- Sentry.metrics.set("user_view_appointment-success", user.name );
-
-
+  Sentry.metrics.set("user_view_appointment-success", user.name);
 
   return (
     <div className="flex h-screen max-h-screen bg-dark-300 px-[5%] relative overflow-hidden">
@@ -104,7 +102,7 @@ const RequestSuccess = async (props: {
               </p>
             </div>
           </div>
-        </section>
+        </div>
 
         <Button variant="outline" className="shad-primary-btn px-8 h-11 rounded-lg text-[14px] font-semibold" asChild>
           <Link href={`/patients/${userId}/new-appointment`}>

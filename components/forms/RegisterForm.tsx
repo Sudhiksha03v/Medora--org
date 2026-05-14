@@ -108,12 +108,14 @@ const RegisterForm = ({ user }: { user: User | null }) => {
       >
         <section className="space-y-4">
           <h1 className="header">Welcome 👋</h1>
-          <p className="text-dark-700">Let us know more about yourself.</p>
+          <p className="text-dark-700">Tell us a little about yourself, and we’ll ensure you receive the best support tailored to your needs.  <br />
+            
+            We're here to help!</p>
         </section>
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header">Personal Information</h2>
+            <h2 className="sub-header">Your Personal Information</h2>
           </div>
 
           {/* NAME */}
@@ -190,7 +192,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="address"
               label="Address"
-              placeholder="14 street, New york, NYC - 5101"
+              placeholder="Enter your full address"
             />
 
             <CustomFormField
@@ -198,7 +200,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="occupation"
               label="Occupation"
-              placeholder=" Software Engineer"
+              placeholder=" Enter your occupation"
             />
           </div>
 
@@ -209,7 +211,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="emergencyContactName"
               label="Emergency contact name"
-              placeholder="Guardian's name"
+              placeholder="Enter guardian's name"
             />
 
             <CustomFormField
@@ -224,7 +226,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header">Medical Information</h2>
+            <h2 className="sub-header">Your Medical Details</h2>
           </div>
 
           {/* PRIMARY CARE PHYSICIAN */}
@@ -233,7 +235,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
             control={form.control}
             name="primaryPhysician"
             label="Primary care physician"
-            placeholder="Select a physician"
+            placeholder="Select a physician you prefer"
           >
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>
@@ -262,7 +264,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="insuranceProvider"
               label="Insurance provider"
-              placeholder="Enter your Insurance Provider"
+              placeholder="Enter your insurance provider details"
             />
 
             <CustomFormField
@@ -289,7 +291,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="currentMedication"
               label="Current medications"
-              placeholder="Ibuprofen 200mg, Levothyroxine 50mcg"
+              placeholder="Ibuprofen 200mg,   Levothyroxine 50mcg"
             />
           </div>
 
@@ -300,7 +302,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="familyMedicalHistory"
               label=" Family medical history (if relevant)"
-              placeholder="Mother had Thyroid, Father has hypertension etc.."
+              placeholder="Mom used to have diabetes, Dad had high blood pressure"
             />
 
             <CustomFormField
@@ -308,7 +310,7 @@ const RegisterForm = ({ user }: { user: User | null }) => {
               control={form.control}
               name="pastMedicalHistory"
               label="Past medical history"
-              placeholder="Mention any past medical complications or diagnosis."
+              placeholder="Mention any past medical complications or diagnosis, that we should know"
             />
           </div>
         </section>
@@ -356,36 +358,34 @@ const RegisterForm = ({ user }: { user: User | null }) => {
 
 
         {/* // Consent and Privacy */}
-
-
         <section className="space-y-6">
-          <div className="mb-9 space-y-1">
-            <h2 className="sub-header">Consent and Privacy</h2>
-          </div>
+  <div className="mb-9 space-y-1">
+    <h2 className="sub-header">Consent and Privacy</h2>
+  </div>
 
-          <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="treatmentConsent"
-            label="I consent to receive treatment for my health condition."
-          />
+  <CustomFormField
+    fieldType={FormFieldType.CHECKBOX}
+    control={form.control}
+    name="treatmentConsent"
+    label="I hereby provide my consent to receive treatment for my health condition."
+  />
 
-          <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="disclosureConsent"
-            label="I consent to the use and disclosure of my health information for treatment purposes only."
-          />
+  <CustomFormField
+    fieldType={FormFieldType.CHECKBOX}
+    control={form.control}
+    name="disclosureConsent"
+    label="I consent to the use and disclosure of my health information solely for treatment purposes only"
+  />
 
-          <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="privacyConsent"
-            label="I acknowledge that I have reviewed and agree to the privacy policy"
-          />
-        </section>
+  <CustomFormField
+    fieldType={FormFieldType.CHECKBOX}
+    control={form.control}
+    name="privacyConsent"
+    label="I acknowledge that I have reviewed and accepted the terms of the privacy policy."
+  />
+</section>
 
-        <SubmitButton isLoading={isLoading}>Submit and Continue</SubmitButton>
+        <SubmitButton isLoading={isLoading}>Submit & Proceed</SubmitButton>
       </form>
     </Form>
   );

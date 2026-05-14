@@ -19,6 +19,10 @@ import { parseStringify } from "../utils";
 export const createUser = async (user: CreateUserParams) => {
   console.log("🚀 SERVER: Creating user in Appwrite...", user.email);
   try {
+    if (!ENDPOINT) {
+      throw new Error("ENDPOINT is required");
+    }
+
     // Create new user -> https://appwrite.io/docs/references/1.5.x/server-nodejs/users#create
     const newuser = await users.create(
       ID.unique(),
@@ -47,6 +51,10 @@ export const createUser = async (user: CreateUserParams) => {
 // GET USER
 export const getUser = async (userId: string) => {
   try {
+    if (!ENDPOINT) {
+      throw new Error("ENDPOINT is required");
+    }
+
     const user = await users.get(userId);
 
     return parseStringify(user);
@@ -57,6 +65,7 @@ export const getUser = async (userId: string) => {
     );
   }
 };
+
 
 // REGISTER PATIENT
 // REGISTER PATIENT
@@ -72,6 +81,10 @@ export const registerPatient = async ({
   try {
     if (!identificationDocument) {
       throw new Error("identificationDocument is required");
+    }
+
+    if (!ENDPOINT) {
+      throw new Error("ENDPOINT is required");
     }
 
     // Upload file ->  // https://appwrite.io/docs/references/cloud/client-web/storage#createFile
@@ -92,6 +105,7 @@ export const registerPatient = async ({
         identificationDocumentId: file.$id,
         identificationDocumentUrl: `${ENDPOINT}/storage/buckets/${BUCKET_ID}/files/${file.$id}/view??project=${PROJECT_ID}`,
         ...patient,
+        allergies: patient.allergies ? patient.allergies.substring(0, 100) : '',
       }
     );
 
@@ -104,6 +118,10 @@ export const registerPatient = async ({
 // GET PATIENT
 export const getPatient = async (userId: string) => {
   try {
+    if (!ENDPOINT) {
+      throw new Error("ENDPOINT is required");
+    }
+
     const patients = await databases.listDocuments(
       DATABASE_ID!,
       PATIENT_COLLECTION_ID!,

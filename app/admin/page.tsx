@@ -10,6 +10,11 @@ import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
 
+  const logoSrc = "/assets/icons/logo-full.png";
+  const appointmentsIcon = "/assets/icons/appointments.svg";
+  const pendingIcon = "/assets/icons/pending.svg";
+  const cancelledIcon = "/assets/icons/cancelled.svg";
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14 relative min-h-screen">
       {/* Background elements for consistency */}
@@ -71,9 +76,7 @@ const AdminPage = async () => {
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>
-
-        <DataTable columns={columns} data={appointments.documents} />
-      </main>
+      </div>
     </div>
   );
 };

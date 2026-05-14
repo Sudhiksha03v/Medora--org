@@ -10,9 +10,11 @@ import { Form } from "@/components/ui/form";
 import { createUser } from "@/lib/actions/patient.actions";
 import { UserFormValidation } from "@/lib/validation";
 
-import "react-phone-number-input/style.css";
+import "react-phone-number-input/style.css"; // Ensure this is imported
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
+
+import PhoneInput from "react-phone-number-input";
 
 export const PatientForm = () => {
   const router = useRouter();
@@ -23,7 +25,7 @@ export const PatientForm = () => {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
+      phone: "+91", // Default phone value with Indian country code
     },
   });
 
@@ -93,8 +95,17 @@ export const PatientForm = () => {
           control={form.control}
           name="phone"
           label="Phone number"
-          placeholder="(555) 123-4567"
-        />
+          placeholder="Enter phone number"
+        >
+          <PhoneInput
+            international
+            defaultCountry="IN" // Ensure the country code is set to India
+            value={form.watch("phone") ?? ""} // Ensure value is set properly
+            onChange={(value) => form.setValue("phone", value ?? "")} // Set the value
+            className="input-class"
+            placeholder="Enter phone number"
+          />
+        </CustomFormField>
 
         <SubmitButton isLoading={isLoading}>Yes, I confirm to proceed to the next step</SubmitButton>
       </form>

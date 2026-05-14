@@ -152,8 +152,8 @@ export const AppointmentForm = ({
               fieldType={FormFieldType.SELECT}
               control={form.control}
               name="primaryPhysician"
-              label="Doctor"
-              placeholder="Select a doctor"
+              label="Confirm you Doctor"
+              placeholder="Select a doctor from the list to confirm"
             >
               {Doctors.map((doctor, i) => (
                 <SelectItem key={doctor.name + i} value={doctor.name}>
@@ -188,7 +188,7 @@ export const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="reason"
-                label="Appointment reason"
+                label="Mention reason for appointment"
                 placeholder="Annual montly check-up"
                 disabled={type === "schedule"}
               />
@@ -197,7 +197,7 @@ export const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="note"
-                label="Comments/notes"
+                label="Additional Comments/notes if any"
                 placeholder="Prefer afternoon appointments, if possible"
                 disabled={type === "schedule"}
               />

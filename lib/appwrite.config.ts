@@ -1,5 +1,3 @@
-// lib/appwrite.config.ts
-
 import * as sdk from "node-appwrite";
 
 export const {
@@ -12,6 +10,10 @@ export const {
   APPOINTMENT_COLLECTION_ID,
   NEXT_PUBLIC_BUCKET_ID: BUCKET_ID,
 } = process.env;
+
+if (!ENDPOINT || !PROJECT_ID || !API_KEY) {
+  throw new Error('Missing required environment variables');
+}
 
 const client = new sdk.Client();
 

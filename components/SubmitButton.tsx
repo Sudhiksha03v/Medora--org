@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Button } from "./ui/button";
 
 interface ButtonProps {
@@ -13,7 +12,7 @@ const SubmitButton = ({ isLoading, className, children }: ButtonProps) => {
     <Button
       type="submit"
       disabled={isLoading}
-      className={className ?? "shad-primary-btn w-full"}
+      className={className ?? "shad-primary-btn w-full hover:bg-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 ease-in-out"}
     >
       {isLoading ? (
         <div className="flex items-center gap-4">
