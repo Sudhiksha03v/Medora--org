@@ -42,7 +42,7 @@ export const IdentificationTypes = [
 
 export const Doctors = [
   {
-    image: "/assets/images/dr-green.png",
+    image: "/assets/images/dr-richard.png",
     name: "John Green",
     specialty: "General Practitioner",
   },
@@ -77,59 +77,59 @@ export const Doctors = [
     specialty: "Dermatologist",
   },
   {
-    image: "/assets/images/dr-cruz.png",
+    image: "/assets/images/dr-sandra.png",
     name: "Alyana Cruz",
     specialty: "OB-GYN",
   },
   {
-    image: "/assets/images/dr-sharma.png",
+    image: "/assets/images/dr-varun.png",
     name: "Hardik Sharma",
     specialty: "Endocrinologist",
   },
   {
-    image: "/assets/images/dr-peter.png",
+    image: "/assets/images/dr-richard.png",
     name: "Richard Daniel",
     specialty: "Senior Cardiologist, MD, DM",
   },
   {
-    image: "/assets/images/dr-cruz.png",
+    image: "/assets/images/dr-sandra.png",
     name: "Neha Singhania",
     specialty: "Obstetrician and Gynecologist, MBBS, MS",
   },
   {
-    image: "/assets/images/dr-powell.png",
+    image: "/assets/images/dr-roshni.png",
     name: "Roshni Aravind Pillai",
     specialty: "Pediatric Surgeon, MBBS, MS, MCh",
   },
   {
-    image: "/assets/images/dr-remirez.png",
+    image: "/assets/images/dr-lakshmi.png",
     name: "Lakshmi Narayanan",
     specialty: "Nephrologist, MD, DM",
   },
-
-  {
-    image: "/assets/images/dr-lakshmi.png",
-    name: "Dr. Lakshmi Narayanan – Nephrologist, MD, DM",
-  },
   {
     image: "/assets/images/dr-leela.png",
-    name: "Dr. Leela Raghavan – Rheumatologist, MBBS, MD",
+    name: "Leela Raghavan",
+    specialty: "Rheumatologist, MBBS, MD",
   },
   {
     image: "/assets/images/dr-rishabh.png",
-    name: "Dr. Rishabh Kulkarni – Radiologist, MBBS, MD",
+    name: "Rishabh Kulkarni",
+    specialty: "Radiologist, MBBS, MD",
   },
   {
     image: "/assets/images/dr-savitri.png",
-    name: "Dr. Savitri Joshi Parekh – General Physician, MBBS, MD",
+    name: "Savitri Joshi Parekh",
+    specialty: "General Physician, MBBS, MD",
   },
   {
     image: "/assets/images/dr-shankar.png",
-    name: "Dr. Shankar Raghunandan Iyer – ENT Specialist, MBBS, MS",
+    name: "Shankar Raghunandan Iyer",
+    specialty: "ENT Specialist, MBBS, MS",
   },
   {
     image: "/assets/images/dr-vivek.png",
-    name: "Dr. Vivek Mittal – Pediatrician, MBBS, MD",
+    name: "Vivek Mittal",
+    specialty: "Pediatrician, MBBS, MD",
   }, 
 ];
 
