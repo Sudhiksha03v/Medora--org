@@ -11,17 +11,16 @@ const RequestSuccess = async (props: {
   params: Promise<{ userId: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) => {
-  const { userId } = await props.params;
+  const params = await props.params;
   const searchParams = await props.searchParams;
+  const userId = params.userId;
   const appointmentId = (searchParams?.appointmentId as string) || "";
   
   const appointment = await getAppointment(appointmentId);
   const doctor = Doctors.find(
-    (doctor) => doctor.name === appointment.primaryPhysician
+    (doctor) => doctor.name === appointment?.primaryPhysician
   );
   const user = await getUser(userId);
-
-  Sentry.metrics.set("user_view_appointment-success", user.name);
 
   return (
     <div className="flex h-screen max-h-screen bg-dark-300 px-[5%] relative overflow-hidden">
@@ -102,7 +101,7 @@ const RequestSuccess = async (props: {
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         <Button variant="outline" className="shad-primary-btn px-8 h-11 rounded-lg text-[14px] font-semibold" asChild>
           <Link href={`/patients/${userId}/new-appointment`}>
