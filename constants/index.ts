@@ -62,12 +62,12 @@ export const Doctors = [
     specialty: "Neurologist",
   },
   {
-    image: "/assets/images/dr-powell.png",
+    image: "/assets/images/dr-maya.png",
     name: "Jane Powell",
     specialty: "Pediatrician",
   },
   {
-    image: "/assets/images/dr-remirez.png",
+    image: "/assets/images/dr-richard.png",
     name: "Alex Ramirez",
     specialty: "Radiologist",
   },

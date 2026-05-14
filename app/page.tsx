@@ -200,7 +200,7 @@ export default function LandingPage() {
 
           {/* All 9 doctors + Book Now card in one unified 5-col grid (2 rows of 5) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
-            {Doctors.map((doc) => (
+            {Doctors.slice(0, 9).map((doc) => (
               <div
                 key={doc.name}
                 className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-dark-400 border border-dark-500/60 hover:border-green-500/30 transition-all duration-300"
@@ -232,10 +232,6 @@ export default function LandingPage() {
               </div>
             </Link>
           </div>
-          <p className="text-lg text-gray-300">
-            Your trusted healthcare platform for all your medical needs.
-          </p>
-        </div>
         </div>
       </section>
 
